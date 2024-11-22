@@ -122,7 +122,7 @@
       <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1276,2885" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="1276,2887" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="downloadYearlyReport" />
       <Variable x:TypeArguments="x:String" Name="configFilePath" />
@@ -184,13 +184,13 @@
     </ui:MultipleAssign>
     <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_MonthsList]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="1090,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="[sheetName]" WorkbookPath="[configFilePath]" />
     <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder TaxID" sap:VirtualizedContainerService.HintSize="1090,112" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[fullNewFolderPath]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome ACME System 1 - Download Monthly Report" sap:VirtualizedContainerService.HintSize="1090,2358" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome ACME System 1 - Download Monthly Report" sap:VirtualizedContainerService.HintSize="1090,2360" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1056,2118" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1056,2120" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,13 +236,13 @@
                 </uix:TargetAnchorable>
               </uix:NSelectItem.Target>
             </uix:NSelectItem>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MonthsList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1022,1467" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_MonthsList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1022,1469" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="988,1278" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="988,1280" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -291,7 +291,7 @@
                         </uix:VerifyExecutionOptions>
                       </uix:NClick.VerifyOptions>
                     </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'No report found'" sap:VirtualizedContainerService.HintSize="954,804" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V4">
+                    <uix:NCheckState DisplayName="Check App State 'No report found'" sap:VirtualizedContainerService.HintSize="954,806" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V4">
                       <uix:NCheckState.IfExists>
                         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,280" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
@@ -299,7 +299,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aceptar'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V4">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aceptar'" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V4">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/reports/download" ContentHash="NMNY3149cECrvOcyta4xyQ" DesignTimeRectangle="1094, 199, 78, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com dice' role='dialog' /&gt;&lt;ctrl name='Aceptar' role='push button' /&gt;" Guid="faac4493-8f16-4493-9e9b-6f9b23f35518" ImageBase64="" InformativeScreenshot="dd8159cdc07e4af4b252bc6d1c61396d.png" Reference="LO0VC71LnUiSub8tDfOEKw/kuzoYaTcn0OdxrBQwttmuA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Download Monthly Report - Google Chrome' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                             </uix:NClick.Target>
@@ -317,7 +317,7 @@
                         </Sequence>
                       </uix:NCheckState.IfExists>
                       <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,564" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,566" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
