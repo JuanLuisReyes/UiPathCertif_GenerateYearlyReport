@@ -1,0 +1,14 @@
+﻿{
+  "Name": "&Abrir",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "o9exwLmu0kiH71IgKavxQQ",
+  "Reference": "LO0VC71LnUiSub8tDfOEKw/o9exwLmu0kiH71IgKavxQQ",
+  "ParentRef": "LO0VC71LnUiSub8tDfOEKw/OMBEvyFiIUKDoWVurXu5cQ",
+  "Created": "2024-11-22T21:32:06.6668889Z",
+  "Updated": "2024-11-22T21:32:06.6668889Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
