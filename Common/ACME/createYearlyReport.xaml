@@ -43,6 +43,11 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -103,9 +108,10 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="createYearlyReport" sap:VirtualizedContainerService.HintSize="1276,1112" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="createYearlyReport" sap:VirtualizedContainerService.HintSize="1276,1161" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="fullFolderPath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_YearlyReportData" />
@@ -117,7 +123,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="502,210" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -147,7 +153,14 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEachFileX DisplayName="For Each File in Folder Current TaxID" Filter="*.xlsx" Folder="[fullFolderPath]" sap:VirtualizedContainerService.HintSize="479,626" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:WriteCell WorkbookPathResource="{x:Null}" Cell="A1" DisplayName="Write Cell Workbook Create file" sap:VirtualizedContainerService.HintSize="502,148" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="[yearlyReportSheet]" WorkbookPath="[Path.Combine(fullFolderPath, String.Format(fileName, in_TaxID))]">
+      <ui:WriteCell.Text>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:WriteCell.Text>
+    </ui:WriteCell>
+    <ui:ForEachFileX DisplayName="For Each File in Folder Current TaxID" Filter="*.csv" Folder="[fullFolderPath]" sap:VirtualizedContainerService.HintSize="502,675" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -156,7 +169,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,336" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,385" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dt_CurrentFileInfo" />
             </Sequence.Variables>
@@ -165,14 +178,13 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadRange Range="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_CurrentFileInfo]" DisplayName="Read Range Workbook Current File" sap:VirtualizedContainerService.HintSize="382,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[CurrentFile.ToString]" />
-            <ui:MergeDataTable Destination="[dt_YearlyReportData]" DisplayName="Merge Data Table Yearly Report" sap:VirtualizedContainerService.HintSize="382,156" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[dt_CurrentFileInfo]" />
+            <ui:ReadCsvFile PathResource="{x:Null}" DataTable="[dt_CurrentFileInfo]" Delimitator="Comma" DelimitatorForViewModel="Comma" DisplayName="Read CSV" FilePath="[CurrentFile.ToString]" sap:VirtualizedContainerService.HintSize="434,186" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+            <ui:AppendRange WorkbookPathResource="{x:Null}" DataTable="[dt_CurrentFileInfo]" DisplayName="Append Range Workbook" sap:VirtualizedContainerService.HintSize="434,139" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="[yearlyReportSheet]" WorkbookPath="[Path.Combine(fullFolderPath, String.Format(fileName, in_TaxID))]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEachFileX.Body>
     </ui:ForEachFileX>
-    <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" AddHeaders="True" DataTable="[dt_YearlyReportData]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="479,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[yearlyReportSheet]" WorkbookPath="[Path.Combine(fullFolderPath, String.Format(fileName, in_TaxID))]" />
-    <Assign DisplayName="Assign Yearly report file path" sap:VirtualizedContainerService.HintSize="479,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Yearly report file path" sap:VirtualizedContainerService.HintSize="502,105" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_YearlyReportPath]</OutArgument>
       </Assign.To>

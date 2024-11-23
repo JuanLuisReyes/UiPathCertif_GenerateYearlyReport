@@ -157,7 +157,7 @@
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/reports/upload" ContentHash="LysSaj0bckSk6O63LzdgjA" DesignTimeRectangle="468, 420, 485, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='vendorTaxID' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="d8cce016-4115-4aeb-b783-16a9b94a2d5c" InformativeScreenshot="37066dcc86220b34a8f9fb85243bfedd.png" IsResponsive="True" Reference="LO0VC71LnUiSub8tDfOEKw/lyOkgFbGLE6ConSp-9fxoQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Upload Yearly Report' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="468, 395, 93, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Vendor TaxID:' check:innerText='Vendor TaxID:' /&gt;" Guid="94f6a1b8-7d93-48a4-b6c5-93faccbbc2ca" ImageBase64="" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -185,7 +185,7 @@
               <uix:NSelectItem.Target>
                 <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/reports/upload" ContentHash="UFmrERSbaEKKXWeUzFTZWw" DesignTimeRectangle="468, 494, 220, 34" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='BUTTON' type='button' class='btn dropdown-toggle bs-placeholder btn-default' aaname='*' check:innerText='---' /&gt;" Guid="cb877534-e7d6-4586-b36a-cfb6db8f61a1" ImageBase64="" InformativeScreenshot="9a4d79565ad560dfa64103afd7287398.png" Reference="LO0VC71LnUiSub8tDfOEKw/NIQYb14K9kebwCx9oNAM7Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Upload Yearly Report' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="468, 469, 34, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Year:' tag='LABEL' type='' class='' check:innerText='Year:' /&gt;" Guid="c33b8501-74a4-4b1c-945e-0243e59d34c6" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -215,11 +215,11 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nombre de archivo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="88b4680e-b59f-4bca-aede-0898866c1a21" Text="[in_yearlyReportPath]" Version="V4">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Nombre de archivo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="88b4680e-b59f-4bca-aede-0898866c1a21" Text="[in_yearlyReportPath]" Version="V4">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/reports/upload" ContentHash="uZBbUNQuZUyX_TXj_dJjXQ" DesignTimeRectangle="252, 465, 463, 15" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Nombre de archivo:' idx='4' /&gt;" Guid="cd4bb9ef-a200-45e7-a92e-c889b9511dc3" ImageBase64="" InformativeScreenshot="a0296c820b00ad24c6da368878bff7b9.png" IsResponsive="True" Reference="LO0VC71LnUiSub8tDfOEKw/oKY8V3SB50uOCkYrKkAECA" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='Abrir' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="138, 464, 105, 15" ElementType="Text" FullSelectorArgument="&lt;wnd ctrlid='1090' title='*Nombre de archivo:' /&gt;" Guid="bebc3c46-8393-4754-a0b1-e0f6eeb33566" ImageBase64="" SearchSteps="Selector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -276,7 +276,7 @@
                       <OutArgument x:TypeArguments="x:String">[out_ConfirmationID]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[out_ConfirmationID.Substring(out_ConfirmationID.IndexOf("is")).Trim]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[out_ConfirmationID.Substring(out_ConfirmationID.IndexOf("is") + 2).Trim]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Aceptar'" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="88b4680e-b59f-4bca-aede-0898866c1a21" Version="V4">

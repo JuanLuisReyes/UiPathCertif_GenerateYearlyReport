@@ -1,0 +1,3 @@
+InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
+455388,"IT Support",216358,43271.6,259630,USD,2017-01-06
+333549,"Various paper supplies",277376,55475.2,332851,RON,2017-01-07

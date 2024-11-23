@@ -276,7 +276,7 @@
                         </uix:TargetAnchorable>
                       </uix:NSelectItem.Target>
                     </uix:NSelectItem>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Report'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DisplayName="Click 'Download Report'" sap:VirtualizedContainerService.HintSize="954,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Version="V4">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/reports/download" ContentHash="jFlRSyctkkuYiAgcsuoHEA" DesignTimeRectangle="468, 612, 134, 34" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='buttonDownload' tag='BUTTON' /&gt;" Guid="b8b688ac-5422-418d-bb0b-44dd5121b6c5" ImageBase64="" InformativeScreenshot="72620a0b65811f60f56f5a48ad3737bb.png" Reference="LO0VC71LnUiSub8tDfOEKw/OMoQNiq_xUmX6WGuUiPslQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                       </uix:NClick.Target>
@@ -323,7 +323,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Report file path'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Text="[Path.Combine(fullNewFolderPath, in_TaxID + &quot;_&quot; + CurrentRow(&quot;Months&quot;).ToString + &quot;.xlsx&quot;)]" Version="V4">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Report file path'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="c479aa0a-b17a-4d0d-8286-57bfeb5bedeb" Text="[Path.Combine(fullNewFolderPath, in_TaxID + &quot;_&quot; + CurrentRow(&quot;Months&quot;).ToString)]" Version="V4">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable BrowserURL="acme-test.uipath.com/reports/download" ContentHash="BGvNMNZAP06RruBMiVW0Ng" DesignTimeRectangle="136, 389, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Panel del explorador' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nombre de archivo:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="faa6f5f4-5499-46ec-b24e-bbe4d9eedb79" ImageBase64="" InformativeScreenshot="7cb8da8260fb8eb04e2a9cbc5d24ef3d.png" Reference="LO0VC71LnUiSub8tDfOEKw/ZS60qP0HYE-grDTRew3yMw" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Guardar como' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
                             </uix:NTypeInto.Target>
